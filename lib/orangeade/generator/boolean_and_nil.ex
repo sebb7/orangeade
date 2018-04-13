@@ -1,6 +1,6 @@
 defmodule Orangeade.Generator.BooleanAndNil do
   @moduledoc """
-  Provides a function for creating a stream booleans and nils.
+  Provides a function for creating a stream of booleans and nils.
   """
 
   alias Orangeade.Generator.BoundNatural

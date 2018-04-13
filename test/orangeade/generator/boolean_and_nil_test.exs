@@ -1,4 +1,4 @@
-defmodule BooleanAndNilTest do
+defmodule Orangeade.Generator.BooleanAndNilTest do
   use ExUnit.Case
   alias Orangeade.Generator.BooleanAndNil
 
