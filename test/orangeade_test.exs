@@ -10,5 +10,11 @@ defmodule OrangeadeTest do
     assert Orangeade.Generator.BoundNatural.__info__(:functions) == [
       stream: 1
     ]
+    assert Orangeade.Generator.Integer.__info__(:functions) == [
+      stream: 1
+    ]
+    assert Orangeade.Generator.Float.__info__(:functions) == [
+      stream: 1
+    ]
   end
 end
