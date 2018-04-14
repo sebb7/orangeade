@@ -16,5 +16,11 @@ defmodule OrangeadeTest do
     assert Orangeade.Generator.PrintableASCIICharlist.__info__(:functions) == [
       stream: 1
     ]
+    assert Orangeade.Generator.ASCIIString.__info__(:functions) == [
+      stream: 1
+    ]
+    assert Orangeade.Generator.ASCIIAtom.__info__(:functions) == [
+      stream: 1
+    ]
   end
 end
