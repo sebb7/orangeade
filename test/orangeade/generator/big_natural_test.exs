@@ -1,16 +1,19 @@
 defmodule Orangeade.Generator.BigNaturalTest do
-  use ExUnit.Case, async: true
-  import Orangeade.Generator.BigNatural, only: [stream: 0]
+  use ExUnit.Case
+  alias Orangeade.Generator.BigNatural
 
-  test "check 5 first generated elements" do
-    generated = Caffeine.Stream.take(stream(), 5)
+  test "generated elements are always natural" do
+    list_of_elements =
+      BigNatural.stream()
+      |> Caffeine.Stream.take(10)
+    assert Enum.all?(list_of_elements, &is_natural/1)
+  end
 
-    assert generated == [
-             1,
-             7_806_831_264_735_756_412,
-             9_396_908_728_118_811_419,
-             11_960_119_808_228_829_710,
-             7_062_582_979_898_595_269
-           ]
+  defp is_natural(n) when n >= 0 do
+    true
+  end
+
+  defp is_natural(_n) do
+    false
   end
 end
