@@ -1,4 +1,4 @@
-defmodule Orangeade.SeedState do
+defmodule Orangeade.Application.SeedState do
   use Agent
 
   alias Psi.LinearCongruentialGenerator, as: LCG
@@ -7,12 +7,12 @@ defmodule Orangeade.SeedState do
   Starts a new seed state which is a big natural numbers stream which is created
   with start_seed passed by supervisor.
   """
-  def start_link(start_seed: start_seed) do
+  def start_link(start_seed: seed) do
     Agent.start_link(
       fn ->
         LCG.stream(
           generator: Orangeade.Generator.BigNatural.instance(),
-          seed: start_seed
+          seed: seed
         )
       end,
       name: __MODULE__

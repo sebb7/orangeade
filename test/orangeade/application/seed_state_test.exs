@@ -1,7 +1,7 @@
-defmodule Orangeade.SeedStateTest do
+defmodule Orangeade.Application.SeedStateTest do
   use ExUnit.Case
 
-  alias Orangeade.SeedState
+  alias Orangeade.Application.SeedState
 
   test "Check if each next seed from get_next/1 is different" do
     list_of_seeds = for _n <- 1..100, do: SeedState.get_next()

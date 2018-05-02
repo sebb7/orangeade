@@ -20,6 +20,10 @@ defmodule Orangeade do
   defdelegate term(), to: Gen.Term, as: :stream
 
   def start(_type, _args) do
-    Orangeade.Supervisor.start_link(1)
+    Orangeade.Application.Supervisor.start_link(start_seed: get_default_seed())
+  end
+
+  defp get_default_seed do
+    Application.get_env(:orangeade, :default_start_seed) 
   end
 end

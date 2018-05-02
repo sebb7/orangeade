@@ -1,7 +1,7 @@
 defmodule Orangeade.Generator.BoundNatural do
   def stream(limit: i) do
     alias Psi.LinearCongruentialGenerator, as: LCG
-    alias Orangeade.SeedState
+    alias Orangeade.Application.SeedState
 
     seed = SeedState.get_next()
     s = LCG.stream(generator: Orangeade.Generator.BigNatural.instance(), seed: seed)
