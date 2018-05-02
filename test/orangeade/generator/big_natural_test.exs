@@ -6,6 +6,7 @@ defmodule Orangeade.Generator.BigNaturalTest do
     list_of_elements =
       BigNatural.stream()
       |> Caffeine.Stream.take(10)
+
     assert Enum.all?(list_of_elements, &is_natural/1)
   end
 

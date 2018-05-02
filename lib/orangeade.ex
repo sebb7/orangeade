@@ -24,6 +24,6 @@ defmodule Orangeade do
   end
 
   defp get_default_seed do
-    Application.get_env(:orangeade, :default_start_seed) 
+    Application.get_env(:orangeade, :default_start_seed)
   end
 end
